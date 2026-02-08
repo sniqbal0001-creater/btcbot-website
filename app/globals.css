@@ -1,26 +1,206 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* -------------------------
+   Tailwind Dark Variant
+-------------------------- */
+@custom-variant dark (&:is(.dark *));
 
+/* -------------------------
+   Theme Tokens
+-------------------------- */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    /* Brand Colors */
+    --color-brand-dark: #30364F;
+    --color-brand-muted: #ACBAC4;
+    --color-brand-accent: #E1D9BC;
+    --color-brand-soft: #F0F0DB;
+
+    /* Core Tokens */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+
+    /* Radius */
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --radius-2xl: calc(var(--radius) + 8px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* -------------------------
+   Light Theme (Default)
+-------------------------- */
+:root {
+    --radius: 0.625rem;
+
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+
+    --card: #ffffff;
+    --card-foreground: #0a0a0a;
+
+    --popover: #ffffff;
+    --popover-foreground: #0a0a0a;
+
+    --primary: #1f2937;
+    --primary-foreground: #ffffff;
+
+    --secondary: #f4f4f5;
+    --secondary-foreground: #1f2937;
+
+    --muted: #f4f4f5;
+    --muted-foreground: #6b7280;
+
+    --accent: #f4f4f5;
+    --accent-foreground: #1f2937;
+
+    --destructive: #dc2626;
+
+    --border: #e5e7eb;
+    --input: #e5e7eb;
+    --ring: #9ca3af;
+}
+
+/* -------------------------
+   Dark Theme (Primary)
+-------------------------- */
+.dark {
+    --background: #000000;
+    --foreground: #ffffff;
+
+    --card: #111827;
+    --card-foreground: #ffffff;
+
+    --popover: #111827;
+    --popover-foreground: #ffffff;
+
+    --primary: #E1D9BC;
+    --primary-foreground: #30364F;
+
+    --secondary: #30364F;
+    --secondary-foreground: #ffffff;
+
+    --muted: #1f2937;
+    --muted-foreground: #ACBAC4;
+
+    --accent: #30364F;
+    --accent-foreground: #F0F0DB;
+
+    --destructive: #ef4444;
+
+    --border: rgba(255, 255, 255, 0.1);
+    --input: rgba(255, 255, 255, 0.15);
+    --ring: rgba(255, 255, 255, 0.35);
+}
+
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/*.snap-container {*/
+/*    scroll-snap-type: y mandatory;*/
+/*    overflow-y: auto;*/
+/*    !*height: 100vh;*!*/
+/*}*/
+
+.snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* -------------------------
+   Base Styles
+-------------------------- */
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground antialiased;
+    }
+}
+
+/* -------------------------
+   Utilities & Animations
+-------------------------- */
+@layer utilities {
+    /* Hero Animations */
+    .animate-hero {
+        animation: heroFadeUp 0.9s ease-out forwards;
+    }
+
+    .animate-hero-delay-1 {
+        animation: heroFadeUp 0.9s ease-out forwards;
+        animation-delay: 0.15s;
+    }
+
+    .animate-hero-delay-2 {
+        animation: heroFadeUp 0.9s ease-out forwards;
+        animation-delay: 0.3s;
+    }
+
+    /* Market Ticker */
+    .animate-marquee {
+        animation: marquee 60s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes heroFadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 }

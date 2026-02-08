@@ -1,0 +1,185 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { Play, Pause, Volume2, VolumeX } from "lucide-react";
+
+const videos = [
+    "/clips/btc-m1.mp4",
+    "/clips/btc-m2.mp4",
+    "/clips/btc-m3.mp4",
+];
+
+export default function ReelsMobile() {
+    const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+    const [current, setCurrent] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(true);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [muted, setMuted] = useState(true);
+
+    const startY = useRef(0);
+    const deltaY = useRef(0);
+
+    const [showPlayUI, setShowPlayUI] = useState(false);
+    const playTimeout = useRef<NodeJS.Timeout | null>(null);
+
+    /* ---------- PLAY CURRENT ONLY ---------- */
+    useEffect(() => {
+        videoRefs.current.forEach((video, i) => {
+            if (!video) return;
+
+            video.muted = muted;
+
+            if (i === current) {
+                video.currentTime = 0;
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+            }
+        });
+
+        setIsPlaying(true);
+
+        const t = setTimeout(() => setIsAnimating(false), 350);
+        return () => clearTimeout(t);
+    }, [current, muted]);
+
+    /* ---------- CHANGE SLIDE (INFINITE LOOP) ---------- */
+    const changeSlide = (next: number) => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+
+        if (next >= videos.length) {
+            setCurrent(0);
+            return;
+        }
+
+        if (next < 0) {
+            setCurrent(videos.length - 1);
+            return;
+        }
+
+        setCurrent(next);
+    };
+
+    /* ---------- TOUCH ---------- */
+    const onTouchStart = (e: React.TouchEvent) => {
+        startY.current = e.touches[0].clientY;
+    };
+
+    const onTouchMove = (e: React.TouchEvent) => {
+        deltaY.current = e.touches[0].clientY - startY.current;
+    };
+
+    const onTouchEnd = () => {
+        if (deltaY.current < -80) changeSlide(current + 1);
+        if (deltaY.current > 80) changeSlide(current - 1);
+        deltaY.current = 0;
+    };
+
+    /* ---------- MOUSE WHEEL ---------- */
+    const onWheel = (e: React.WheelEvent) => {
+        if (isAnimating) return;
+        if (e.deltaY > 50) changeSlide(current + 1);
+        if (e.deltaY < -50) changeSlide(current - 1);
+    };
+
+    /* ---------- PLAY / PAUSE ---------- */
+    const togglePlay = () => {
+        const video = videoRefs.current[current];
+        if (!video) return;
+
+        if (video.paused) {
+            video.play();
+            setIsPlaying(true);
+        } else {
+            video.pause();
+            setIsPlaying(false);
+        }
+
+        // show UI briefly
+        setShowPlayUI(true);
+
+        if (playTimeout.current) {
+            clearTimeout(playTimeout.current);
+        }
+
+        playTimeout.current = setTimeout(() => {
+            setShowPlayUI(false);
+        }, 1000);
+    };
+
+
+    /* ---------- MUTE ---------- */
+    const toggleMute = () => {
+        setMuted((prev) => !prev);
+    };
+
+    return (
+        <section className="min-h-screen bg-black flex items-center justify-center">
+            <div
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+                onWheel={onWheel}
+                className="relative w-[300px] md:w-[360px] h-[600px] md:h-[720px] rounded-[2.5rem] overflow-hidden border-6 border-neutral-700 bg-black touch-none"
+            >
+                {/* NOTCH */}
+                <div className="absolute top-2 left-1/2 -translate-x-1/2
+                            w-16 h-3 bg-black rounded-full z-12" />
+
+                {/* SLIDER */}
+                <div
+                    className="absolute top-0 left-0 w-full h-full transition-transform duration-300 ease-out"
+                    style={{ transform: `translateY(-${current * 100}%)` }}
+                >
+                    {videos.map((src, i) => (
+                        <div key={i} className="w-full h-full relative">
+                            <video
+                                ref={(el) => {
+                                    videoRefs.current[i] = el;
+                                }}
+                                src={src}
+                                className="w-full h-full object-cover"
+                                playsInline
+                                preload="metadata"
+                                onEnded={() => changeSlide(i + 1)}
+                            />
+
+                            {/* TAP ZONE */}
+                            {i === current && (
+                                <button
+                                    onClick={togglePlay}
+                                    className="absolute inset-0 z-10"
+                                />
+                            )}
+
+                            {/* PLAY / PAUSE UI (TEMPORARY) */}
+                            {i === current && showPlayUI && (
+                                <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+                                    <div className="bg-black/60 p-4 rounded-full">
+                                        {isPlaying ? (
+                                            <Pause size={36} className="text-white" />
+                                        ) : (
+                                            <Play size={36} className="text-white" />
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+
+
+                            {/* MUTE BUTTON */}
+                            {i === current && (
+                                <button
+                                    onClick={toggleMute}
+                                    className="absolute bottom-4 right-4 z-20 bg-black/60 p-2 rounded-full text-white"
+                                >
+                                    {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                                </button>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
