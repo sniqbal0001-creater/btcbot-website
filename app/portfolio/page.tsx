@@ -1,4 +1,4 @@
-import EarningsHero from "@/components/EarningsHero";
+// import EarningsHero from "@/components/EarningsHero";
 import EarningVideo from "@/components/EarningVideo";
 import TrustedClients from "@/components/TrustedClients";
 import TradePerformance from "@/components/TradePerformance";
@@ -12,7 +12,7 @@ export const metadata = {
 export default function EarningsPage() {
     return (
         <>
-            <EarningsHero />
+            {/* <EarningsHero /> */}
             <EarningVideo />
             <TrustedClients />
             <TradePerformance />

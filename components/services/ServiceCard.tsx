@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface ServiceCardProps {
     title: string;
@@ -50,8 +51,8 @@ export default function ServiceCard(
             </p>
 
             {/* Action */}
-            <button
-                onClick={onAction}
+            <Link
+                href="/about"
                 className="
           text-sm font-semibold
           text-[#E1D9BC]
@@ -60,7 +61,7 @@ export default function ServiceCard(
         "
             >
                 {actionText} →
-            </button>
+            </Link>
         </div>
     );
 }

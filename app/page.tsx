@@ -19,12 +19,7 @@ const servicesData = [
             "Built-in stop-loss logic, position sizing, and drawdown controls to help protect capital during volatile markets.",
         icon: "/icons/risk.png",
     },
-    // {
-    //     title: "Demo & Live Account Support",
-    //     description:
-    //         "Start safely with a demo account and transition to live trading only when you’re confident with the system’s behavior.",
-    //     icon: "/icons/demo.png",
-    // },
+
     {
         title: "Performance Analytics",
         description:
@@ -63,7 +58,7 @@ const testimonialsData = [
         name: "Ayesha Khan",
         role: "Beginner Trader",
         message:
-            "I had zero experience before. Starting on a demo account helped me understand how trades work without pressure.",
+            "I had zero experience before. Starting on a new account helped me understand how trades work without pressure.",
     },
     {
         name: "David Thompson",
@@ -129,9 +124,9 @@ export default function Home() {
                 description="We believe trust is built through visibility. Every trade, metric, and action is accessible so users always know how the system behaves."
                 points={[
                     "FULL TRADE HISTORY VISIBILITY",
-                    "DEMO ACCOUNT TESTING SUPPORTED",
+                    "EASY WITHDRAW TO YOUR ACCOUNT ",
+                    "NEW ACCOUNT SUPPORTED",
                     "NO GUARANTEED RETURNS CLAIMS",
-                    "USER-CONTROLLED RISK SETTINGS",
                 ]}
                 image="/Growth-pic.jpg"
                 mirror

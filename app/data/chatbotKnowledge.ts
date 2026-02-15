@@ -17,7 +17,7 @@ export const chatbotKnowledge = [
     {
         keywords: ["demo", "trial", "test"],
         answer:
-            "Yes, you can start with a demo account to test the system before moving to live trading.",
+            "No, you need a proper account to start with a the system before for live trading.",
     },
     {
         keywords: ["support", "contact", "help"],
