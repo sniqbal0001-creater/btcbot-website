@@ -142,7 +142,8 @@ export default function ReelsMobile() {
 
   return (
     <section className="min-h-screen bg-black text-white flex items-center">
-      <div className="max-w-7xl mx-auto px-6 grid gap-12 md:grid-cols-2 items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 grid gap-12 md:grid-cols-2 items-center justify-items-center md:justify-items-stretch text-center md:text-left">
+
         <div>
           <h1 className="text-4xl md:text-5xl font-bold uppercase text-brand-accent">
             Monthly Earnings Proof
@@ -162,22 +163,28 @@ export default function ReelsMobile() {
           onMouseUp={onMouseUp}
           onMouseLeave={onMouseLeave}
           className="
-    relative flex justify-center
+    relative flex justify-center 
     w-[300px] md:w-[360px]
     h-[600px] md:h-[720px]
-    rounded-[2.5rem]
+    rounded-[1.5rem]
     overflow-hidden
-    border-6 border-neutral-700
+    border-6 border-gray-600
     bg-black
     touch-none
     select-none
     overscroll-contain
     cursor-grab active:cursor-grabbing"
         >
+          {/* speaker */}
+          <div
+            className="absolute top-[-1.5] left-1/2 -translate-x-1/2
+                            w-20 h-1.5 bg-black rounded-b-lg z-100"
+          />
+
           {/* NOTCH */}
           <div
-            className="absolute top-2 left-1/2 -translate-x-1/2
-                            w-16 h-3 bg-black rounded-full z-12"
+            className="absolute top-0 left-1/2 -translate-x-1/2
+                            w-5 h-4 bg-black rounded-b-lg z-5"
           />
 
           {/* SLIDER */}

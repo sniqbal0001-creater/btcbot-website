@@ -14,9 +14,9 @@ export default function EarningsPage() {
         <>
             {/* <EarningsHero /> */}
             <EarningVideo />
+            <ProfitRecords />
             <TrustedClients />
             <TradePerformance />
-            <ProfitRecords />
             <Partners />
 
         </>

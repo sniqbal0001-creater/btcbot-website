@@ -22,7 +22,7 @@ export default function Navbar() {
                     href="/"
                     className="text-xl font-extrabold tracking-widest text-brand-accent"
                 >
-                    ATIF
+                    BTC-Bot
                 </Link>
 
                 {/* Desktop Links */}

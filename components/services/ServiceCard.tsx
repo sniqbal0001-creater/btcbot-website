@@ -51,7 +51,7 @@ export default function ServiceCard(
             </p>
 
             {/* Action */}
-            <Link
+            {/* <Link
                 href="/about"
                 className="
           text-sm font-semibold
@@ -61,7 +61,7 @@ export default function ServiceCard(
         "
             >
                 {actionText} →
-            </Link>
+            </Link> */}
         </div>
     );
 }

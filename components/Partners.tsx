@@ -8,10 +8,12 @@ export default function Partners() {
 
                 <div className="flex flex-wrap justify-center gap-12 opacity-60">
                     {[
-                        "MetaTrader 5",
-                        "Top Forex Brokers",
-                        "Liquidity Providers",
-                        "Cloud AI Infra",
+                        "STARTRADER",
+                        "MULTI BANK ",
+                        "EQUITY",
+                        "VT MARKET",
+                        "IG MARKET",
+                        "EXNESS",
                     ].map((partner, i) => (
                         <span
                             key={i}

@@ -39,14 +39,14 @@ export default function Hero() {
             animate-hero-delay-1
             mt-6 text-brand-muted
             text-lg md:text-xl
-          "
+          " 
                 >
-                    Automated trading technology that works directly on your broker account,
-                    no fund transfers, full control, transparent results.
+                    Automated trading Strategy that works directly on your broker account,
+                    fully transparent.
                 </p>
 
                 <div className="animate-hero-delay-2 mt-10 flex justify-center gap-4 md:gap-8">
-                    <a
+                    {/* <a
                         href="/contactus"
                         className="
               rounded-2xl px-4 md:px-8 py-2 md:py-4
@@ -56,7 +56,7 @@ export default function Hero() {
             "
                     >
                         CONTACT US
-                    </a>
+                    </a> */}
 
                     <a
                         href="/portfolio"
@@ -68,7 +68,7 @@ export default function Hero() {
               transition
             "
                     >
-                        VIEW MARKETS
+                        VIEW RESULTS
                     </a>
                 </div>
             </div>

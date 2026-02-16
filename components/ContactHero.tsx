@@ -42,7 +42,7 @@ export default function ContactHero() {
                                 href="tel:+919999999999"
                                 className="text-lg font-medium hover:text-brand-accent transition"
                             >
-                                +91 99999 99999
+                                +91 75178 65259
                             </a>
                         </div>
                     </div>
@@ -55,10 +55,10 @@ export default function ContactHero() {
                         <div>
                             <p className="text-sm text-brand-muted">Email</p>
                             <a
-                                href="mailto:contact@yourdomain.com"
+                                href="mailto:support@btcb0t.com  "
                                 className="text-lg font-medium hover:text-brand-accent transition"
                             >
-                                contact@yourdomain.com
+                                support@btcb0t.com  
                             </a>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ export default function ContactHero() {
 
                         <div className="flex gap-4">
                             <a
-                                href="#"
+                                href="https://www.instagram.com/?hl=en"
                                 target="_blank"
                                 className="p-3 rounded-full bg-brand-dark/70 hover:bg-brand-accent hover:text-black transition"
                             >
@@ -79,20 +79,20 @@ export default function ContactHero() {
                             </a>
 
                             <a
-                                href="#"
+                                href="https://www.facebook.com/login.php"
                                 target="_blank"
                                 className="p-3 rounded-full bg-brand-dark/70 hover:bg-brand-accent hover:text-black transition"
                             >
                                 <Facebook />
                             </a>
 
-                            <a
+                            {/* <a
                                 href="#"
                                 target="_blank"
                                 className="p-3 rounded-full bg-brand-dark/70 hover:bg-brand-accent hover:text-black transition"
                             >
                                 <Linkedin />
-                            </a>
+                            </a> */}
                         </div>
                     </div>
 

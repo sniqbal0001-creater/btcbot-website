@@ -7,7 +7,7 @@ export default function Footer() {
                 {/* Brand */}
                 <div>
                     <h2 className="text-lg font-extrabold tracking-widest text-brand-accent">
-                        ATIF
+                        BTC-Bot
                     </h2>
                     <p className="mt-4 text-sm text-brand-muted max-w-xs">
                         Professional Forex & Crypto trading websites, analytics dashboards,
@@ -52,17 +52,17 @@ export default function Footer() {
                                 href="tel:+919876543210"
                                 className="hover:text-white transition"
                             >
-                                +91 98765 43210
+                                +91 75178 65259
                             </a>
                         </p>
 
                         <p>
                             ✉️{" "}
                             <a
-                                href="mailto:contact@yourdomain.com"
+                                href="mailto:support@btcb0t.com  "
                                 className="hover:text-white transition"
                             >
-                                contact@yourdomain.com
+                                support@btcb0t.com  
                             </a>
                         </p>
                     </div>
@@ -71,7 +71,7 @@ export default function Footer() {
 
             {/* Bottom Bar */}
             <div className="border-t border-brand-dark py-4 text-center text-sm text-brand-muted">
-                © {new Date().getFullYear()} ATIF. All rights reserved.
+                © {new Date().getFullYear()} BTC-Bot. All rights reserved.
             </div>
         </footer>
     );

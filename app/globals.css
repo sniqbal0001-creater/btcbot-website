@@ -181,7 +181,7 @@ body {
 
     /* Market Ticker */
     .animate-marquee {
-        animation: marquee 60s linear infinite;
+        animation: marquee 10s linear infinite;
     }
 
     @keyframes marquee {

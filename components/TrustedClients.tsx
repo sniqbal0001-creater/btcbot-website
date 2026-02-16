@@ -8,7 +8,7 @@ export default function TrustedClients() {
                 <div className="h-1 w-20 bg-brand-accent mx-auto mb-10 rounded-full" />
 
                 {/* Stats */}
-                <div className="grid md:grid-cols-3 gap-10 mb-16">
+                <div className="grid md:grid-cols-3 gap-10 my-20">
                     {[
                         { label: "Active Clients", value: "1,000+" },
                         { label: "Countries Served", value: "15+" },
@@ -24,7 +24,7 @@ export default function TrustedClients() {
                 </div>
 
                 {/* Logos strip */}
-                <div className="flex flex-wrap justify-center gap-10 opacity-70">
+                {/* <div className="flex flex-wrap justify-center gap-10 opacity-70">
                     {["Broker A", "Broker B", "Prop Firm", "Crypto Desk"].map(
                         (name, i) => (
                             <span
@@ -35,7 +35,7 @@ export default function TrustedClients() {
               </span>
                         )
                     )}
-                </div>
+                </div> */}
             </div>
         </section>
     );

@@ -10,10 +10,10 @@ export default function AboutPage() {
         <main className="bg-black text-white overflow-x-hidden">
             <AboutHero />
             <OurStory />
-            <TeamSection />
+            {/* <TeamSection /> */}
             <TechStack />
             <Achievements />
-            <SafetyCompliance />
+            {/* <SafetyCompliance /> */}
         </main>
     );
 }

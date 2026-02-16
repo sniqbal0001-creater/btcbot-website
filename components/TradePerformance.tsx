@@ -19,10 +19,10 @@ export default function TradePerformance() {
                 {/* Metrics */}
                 <div className="space-y-8">
                     {[
-                        { label: "Win Rate", value: "78%" },
-                        { label: "Max Drawdown", value: "6.2%" },
-                        { label: "Risk per Trade", value: "1%" },
-                        { label: "Avg Monthly ROI", value: "12–18%" },
+                        { label: "Win Rate", value: "65-78%" },
+                        { label: "Max Drawdown", value: "15%" },
+                        { label: "Risk per Trade", value: "4.7%" },
+                        { label: "Avg Monthly ROR", value: "12–18%" },
                     ].map((item, i) => (
                         <div key={i}>
                             <div className="flex justify-between text-sm mb-2 text-white">
