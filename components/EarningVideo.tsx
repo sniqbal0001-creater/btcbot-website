@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
-const videos = ["/clips/btc-m1.mp4", "/clips/btc-m2.mp4", "/clips/btc-m3.mp4"];
+const videos = ["/clips/btc-m1.mp4", "/clips/btc-m2.mp4"];
+// const videos = ["/clips/btc-m1.mp4", "/clips/btc-m2.mp4", "/clips/btc-m3.mp4"];
 
 export default function ReelsMobile() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);

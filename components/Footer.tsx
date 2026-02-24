@@ -1,4 +1,11 @@
 import Link from "next/link";
+import { Sansation } from "next/font/google";
+
+const sansation = Sansation({
+  subsets: ["latin"],
+  weight: ["700"],
+  style: ["italic"],
+});
 
 export default function Footer() {
     return (
@@ -6,8 +13,8 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6 py-12 grid gap-8 md:grid-cols-2">
                 {/* Brand */}
                 <div>
-                    <h2 className="text-lg font-extrabold tracking-widest text-brand-accent">
-                        BTC-Bot
+                    <h2 className={`${sansation.className} text-lg font-extrabold tracking-widest text-[#daa520]`}>
+                        BTC<span className="text-[#124592]">B0T</span>
                     </h2>
                     <p className="mt-4 text-sm text-brand-muted max-w-xs">
                         Professional Forex & Crypto trading websites, analytics dashboards,

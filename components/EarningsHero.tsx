@@ -5,10 +5,17 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const screenshots = [
-    "/hero-trading-bg.jpg",
-    "/Growth-pic.jpg",
-    "/hero-trading-bg.jpg",
-    "/Growth-pic.jpg",
+    "/ssImgs/btc-bot-01-26-ss (1).jpg",
+    "/ssImgs/btc-bot-12-25-ss (1).jpg",
+    "/ssImgs/btc-bot-11-25-ss (1).jpg",
+    "/ssImgs/btc-bot-10-25-ss (1).jpg",
+    "/ssImgs/btc-bot-09-25-ss (1).jpg",
+    "/ssImgs/btc-bot-08-25-ss (1).jpg",
+    "/ssImgs/btc-bot-07-25-ss (1).jpg",
+
+    // "/Growth-pic.jpg",
+    // "/hero-trading-bg.jpg",
+    // "/Growth-pic.jpg",
 ];
 
 export default function EarningsHero() {

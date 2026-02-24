@@ -2,6 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Sansation } from "next/font/google";
+
+const sansation = Sansation({
+  subsets: ["latin"],
+  weight: ["700"],
+  style: ["italic"],
+});
+
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -20,9 +28,10 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="text-xl font-extrabold tracking-widest text-brand-accent"
+                    className={`${sansation.className} text-2xl sansation-bold-italic tracking-widest text-[#daa520]`}
                 >
-                    BTC-Bot
+                    <img src="/logoImg.jpeg" alt="logo" className="w-16 h-16 rounded-xl" />
+                    {/* BTC<span className="text-[#124592]">B0T</span> */}
                 </Link>
 
                 {/* Desktop Links */}
