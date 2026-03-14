@@ -17,8 +17,7 @@ export default function Footer() {
                         BTC<span className="text-[#124592]">B0T</span>
                     </h2>
                     <p className="mt-4 text-sm text-brand-muted max-w-xs">
-                        Professional Forex & Crypto trading websites, analytics dashboards,
-                        and fintech solutions built with modern web technologies.
+                        Professional Forex & Crypto trading.
                     </p>
                 </div>
 
@@ -53,7 +52,7 @@ export default function Footer() {
                     </h3>
 
                     <div className="mt-4 space-y-3 text-brand-muted text-sm">
-                        <p>
+                        {/* <p>
                             📞{" "}
                             <a
                                 href="tel:+919876543210"
@@ -61,7 +60,7 @@ export default function Footer() {
                             >
                                 +91 75178 65259
                             </a>
-                        </p>
+                        </p> */}
 
                         <p>
                             ✉️{" "}

@@ -32,7 +32,7 @@ export default function Hero() {
             text-lg md:text-xl font-extrabold uppercase tracking-widest
           "
                 >
-                    Trade Smarter. Trade Emotion-Free.
+                    Trade Smarter. Trade Emotionless.
                 </p>
                 <p
                     className="

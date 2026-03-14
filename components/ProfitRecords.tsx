@@ -3,6 +3,7 @@ const records = [
   { month: "Apr to Jul 2025", profit: "+24.8%" },
   { month: "Aug to Sept 2025", profit: "+32.5%" },
   { month: "Jan to Mar 2025", profit: "+34.2%" },
+  { month: "Jan to Mar 2006", profit: "+56.7%" },
 ];
 
 // Helper to convert month name to number

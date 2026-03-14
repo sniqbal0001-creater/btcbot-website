@@ -3,8 +3,22 @@
 import { useEffect, useRef, useState } from "react";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
-const videos = ["/clips/btc-m1.mp4", "/clips/btc-m2.mp4"];
-// const videos = ["/clips/btc-m1.mp4", "/clips/btc-m2.mp4", "/clips/btc-m3.mp4"];
+// const videos = ["/clips/btc-m1.mp4", "/clips/btc-m2.mp4"];
+const videos = [
+  "/btc-bot-monthly-stat-clip/01-25-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/03-25-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/04-25-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/05-25-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/05-24-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/07-24-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/07-25-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/08-24-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/09-25-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/10-24-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/11-25-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/12-24-stat-btc-b0t.mp4",
+  "/btc-bot-monthly-stat-clip/12-25-stat-btc-b0t.mp4",
+];
 
 export default function ReelsMobile() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -144,7 +158,6 @@ export default function ReelsMobile() {
   return (
     <section className="min-h-screen bg-black text-white flex items-center">
       <div className="max-w-7xl mx-auto px-4 md:px-6 grid gap-12 md:grid-cols-2 items-center justify-items-center md:justify-items-stretch text-center md:text-left">
-
         <div>
           <h1 className="text-4xl md:text-5xl font-bold uppercase text-brand-accent">
             Monthly Earnings Proof

@@ -32,7 +32,7 @@ export default function ContactHero() {
                 <div className="space-y-6">
 
                     {/* PHONE */}
-                    <div className="flex items-center gap-4">
+                    {/* <div className="flex items-center gap-4">
                         <div className="p-3 rounded-full bg-brand-dark/70">
                             <Phone className="text-brand-accent" />
                         </div>
@@ -45,7 +45,7 @@ export default function ContactHero() {
                                 +91 75178 65259
                             </a>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* EMAIL */}
                     <div className="flex items-center gap-4">

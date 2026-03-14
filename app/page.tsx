@@ -16,32 +16,32 @@ const servicesData = [
     title: "Advanced Risk Management",
     description:
       "Built-in stop-loss logic, position sizing, and drawdown controls to help protect capital during volatile markets.",
-    icon: "/icons/risk.png",
+    icon: "/icons/speedo-meter.png",
   },
 
   {
     title: "Performance Analytics",
     description:
       "Access transparent trade history, win/loss ratios, and performance metrics to track system behavior over time.",
-    icon: "/icons/graph.png",
+    icon: "/icons/analytics.png",
   },
   {
     title: "Strategy Flexibility",
     description:
       "Supports multiple trading styles such as scalping, intraday, and swing-based logic depending on market conditions.",
-    icon: "/icons/strategy.png",
+    icon: "/icons/graph.png",
   },
   {
     title: "Full User Control",
     description:
       "You always remain in control — pause, stop, or disconnect the system from your broker account at any time.",
-    icon: "/icons/control.png",
+    icon: "/icons/setting.png",
   },
   {
     title: "Broker-Compatible Setup",
     description:
       "Designed to work with popular MT4/MT5 brokers using secure, user-authorized connections.",
-    icon: "/icons/broker.png",
+    icon: "/icons/robot.png",
   },
 ];
 
